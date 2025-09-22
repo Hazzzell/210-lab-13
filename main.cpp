@@ -20,11 +20,12 @@ int main() {
         return 1;
     }
 
-    for (int i = 0; i < DAYS; i++) {
-        infile >> temperatures[i];
+    double temp;
+    while (infile >> temp) {
+        temperatures.push_back(temp);
     }
     infile.close();
-
+    
     //<vector> objects can report their own size, unlike C-style arrays
     cout << "1.  Size: " << temperatures.size() << endl;
 
@@ -67,25 +68,21 @@ int main() {
 
     // create empty <vector> and fill with one value
     vector<double> week1(7);
-    fill()
-
-    vector<double> week1(7);
-    week1.fill(80.0);
-    week2.fill(70.0);
+    fill(week1.begin(), week1.end(), 80.0);  // fill with 80°F
     cout << "15. Week1 temperatures: ";
-    for (double t : week1) cout << t << " "; cout << endl;
-    cout << "16. Week2 temperatures: ";
-    for (double t : week2) cout << t << " "; cout << endl;
+    for (double t : week1) cout << t << " ";
+    cout << endl;
 
-    // swap arrays
+    vector<double> week2(7);
+    fill(week2.begin(), week2.end(), 70.0);  // fill with 70°F
+    cout << "16. Week2 temperatures: ";
+    for (double t : week2) cout << t << " ";
+    cout << endl;
+
+    // swap vector
     week1.swap(week2);
     cout << "17. After swap, week 1 temperatures: ";
     for (double t : week1) cout << t << " "; cout << endl;
-
-    // a 2-D array
-    array<double, 7> weekDays = {70,72,74,71,73,75,76};
-    array<array<double, 7>, 2> twoWeeks = {week1, weekDays};
-    cout << "18. Two-week 2D array, last day of 2nd week: " << twoWeeks[1][6] << endl;
 
     return 0;
 }
