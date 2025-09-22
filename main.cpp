@@ -10,7 +10,7 @@ using namespace std;
 const int DAYS = 30;
 
 int main() {
-    // declarations
+    //declarations
     vector<double> temperatures;
 
     //Read data from external file
@@ -25,14 +25,14 @@ int main() {
     }
     infile.close();
 
-    // <array> objects can report their own size, unlike C-style arrays
+    //<vector> objects can report their own size, unlike C-style arrays
     cout << "1.  Size: " << temperatures.size() << endl;
 
-    // range loop to access elements
+    //range loop to access elements
     cout << "2.  Temperatures: ";
     for (double t : temperatures) cout << t << " "; cout << endl;
 
-    // accessing individual elements
+    //accessing individual elements
     cout << "3.  Element 2: " << temperatures.at(2) << endl;
     cout << "4.  Element 2: " << temperatures[2] << endl;
     cout << "5.  Front: " << temperatures.front() << endl;
@@ -65,9 +65,11 @@ int main() {
     cout << "13. Min: " << *min_element(temperatures.begin(), temperatures.end()) << endl;
     cout << "14. Sum: " << accumulate(temperatures.begin(), temperatures.end(), 0) << endl;
 
-    // create empty <array> and fill with one value
-    array<double, 7> week1;
-    array<double, 7> week2;
+    // create empty <vector> and fill with one value
+    vector<double> week1(7);
+    fill()
+
+    vector<double> week1(7);
     week1.fill(80.0);
     week2.fill(70.0);
     cout << "15. Week1 temperatures: ";
